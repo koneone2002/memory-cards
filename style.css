@@ -19,11 +19,16 @@ body {
 h1 {
   position: relative;
 }
-h1 button {
+h1.show-card {
   position: absolute;
-  right: 0;
+  top: 0;
+  right: 10px;
   transform: translate(120%, -50%);
   z-index: 2;
+}
+h1.remove-card {
+  position: absolute;
+  left: 0;
 }
 
 .btn {

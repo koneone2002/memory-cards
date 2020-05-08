@@ -68,6 +68,15 @@ function createCard(data, index) {
 
   updateCurrentText();
 }
+//Remove a card
+function removeCard() {
+  const card = cardsEl[currentActiveCard];
+  console.log(card);
+  // localStorage.removeItem(card.value);
+  cardsContainer.innerHTML = '';
+  // window.location.reload();
+  updateCurrentText();
+}
 
 // Show number of cards
 function updateCurrentText() {
@@ -142,9 +151,4 @@ clearBtn.addEventListener('click', () => {
 });
 
 // remove Card button
-removeCardBtn.addEventListener('click', () => {
-  cardsEl.pop(card);
-  // localStorage.removeItem(cards.value);
-  cardsContainer.innerHTML = '';
-  window.location.reload();
-});
+removeCardBtn.addEventListener('click', removeCard);
