@@ -86,7 +86,7 @@ h1 button {
   width: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 04s ease;
+  transition: transform 0.4s ease;
 }
 .card.show-answer .inner-card {
   transform: rotateX(180deg);
@@ -139,6 +139,8 @@ h1 button {
 .navigation p {
   margin: 0 25px;
 }
+
+/* Add Container */
 .add-container {
   opacity: 0;
   z-index: -1;
