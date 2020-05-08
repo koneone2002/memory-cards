@@ -10,6 +10,8 @@ const addCardBtn = document.getElementById('add-card');
 const clearBtn = document.getElementById('clear');
 const addContainer = document.getElementById('add-container');
 
+const removeCardBtn = document.getElementById('remove-card');
+
 // Keep track of current card
 let currentActiveCard = 0;
 
@@ -50,6 +52,7 @@ function createCard(data, index) {
     <div class="inner-card">
       <div class="inner-card-front">
         <p>${data.question}</p>
+        
       </div>
       <div class="inner-card-back">
         <p>${data.answer}</p>
@@ -134,6 +137,14 @@ addCardBtn.addEventListener('click', () => {
 // Clear cards button
 clearBtn.addEventListener('click', () => {
   localStorage.clear();
-  cardsContainer.innerHMTL = '';
+  cardsContainer.innerHTML = '';
+  window.location.reload();
+});
+
+// remove Card button
+removeCardBtn.addEventListener('click', () => {
+  cardsEl.pop(card);
+  // localStorage.removeItem(cards.value);
+  cardsContainer.innerHTML = '';
   window.location.reload();
 });
