@@ -70,12 +70,21 @@ function createCard(data, index) {
 }
 //Remove a card
 function removeCard() {
-  const card = cardsEl[currentActiveCard];
+  let card = cardsEl[currentActiveCard];
   console.log(card);
-  // localStorage.removeItem(card.value);
-  cardsContainer.innerHTML = '';
+  card = JSON.parse(localStorage.getItem('cards'));
+  // console.log(card);
+  // card = JSON.parse(localStorage.getItem('cards'));
+
+  const filtered = card.filter(item => item !== 'active');
+  console.log(filtered);
+  // localStorage.setItem('card', JSON.stringify(filtered));
+  //console.log(card);// card.classList.remove('card');
+
+  //localStorage.removeItem(card);
+  //cardsContainer.innerHTML = '';
   // window.location.reload();
-  updateCurrentText();
+  // updateCurrentText();
 }
 
 // Show number of cards
