@@ -70,14 +70,27 @@ function createCard(data, index) {
 }
 //Remove a card
 function removeCard() {
-  let card = cardsEl[currentActiveCard];
-  console.log(card);
-  card = JSON.parse(localStorage.getItem('cards'));
+  const cardData = cardsData[currentActiveCard];
+  const card = cardsEl[currentActiveCard];
+  const question = questionEl.value;
+  const answer = answerEl.value;
+  console.log(cardsData);
+  card.innerHTML = '';
+  // if (question.trim() && answer.trim()) {
+  //   const newCard = { question, answer };
+  //   console.log(newCard);
+  // }
+  const newCard = { question, answer };
+  delete newCard;
+  currentActiveCard = currentActiveCard - 1;
+  updateCurrentText();
+  //console.log(card);
+  //card = JSON.parse(localStorage.getItem('cards'));
   // console.log(card);
   // card = JSON.parse(localStorage.getItem('cards'));
 
-  const filtered = card.filter(item => item !== 'active');
-  console.log(filtered);
+  //const filtered = card.filter(item => item !== 'active');
+  //console.log(filtered);
   // localStorage.setItem('card', JSON.stringify(filtered));
   //console.log(card);// card.classList.remove('card');
 
